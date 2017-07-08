@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="KreslarzWPF.View.Tab4Content"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid DataContext="{Binding SelectedSpan}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="[1] Średnica" />
+        <Label Grid.Column="0" Grid.Row="1" Content="[2] Typ strzemion" />
+        <Label Grid.Column="0" Grid.Row="2" Content="[3] Haki" />
+        <Label Grid.Column="0" Grid.Row="3" Content="[4] Rozstaw lewy" />
+        <Label Grid.Column="0" Grid.Row="4" Content="[5] Liczba" />
+        <Label Grid.Column="0" Grid.Row="5" Content="[6] Rozstaw środkowy" />
+        <Label Grid.Column="0" Grid.Row="6" Content="[7] Liczba" />
+        <Label Grid.Column="0" Grid.Row="7" Content="[8] Rozstaw prawy" />
+        <Label Grid.Column="0" Grid.Row="8" Content="[9] Liczba" />
+        <Label Grid.Column="0" Grid.Row="9" Content="[10] Odstęp" />
+
+        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Stirrup.Diameter}" />
+        <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Stirrup.StirrupTypes}" SelectedItem="{Binding Stirrup.Type}" />
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding TopLeftRbarLeftOverhang}" />
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding TopLeftRbarRightOverhang}" />
+        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding TopRightRbarDiameter}" />
+        <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding NumberOfTopRightRbars}" />
+        <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding TopRightRbarLeftOverhang}" />
+        <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding TopRightRbarRightOverhang}" />
+        <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding TopLeftRbarLeftHook}" />
+        <TextBox Grid.Column="1" Grid.Row="9" Text="{Binding TopLeftRbarRightHook}" />
+
+        <Label Grid.Column="2" Grid.Row="0" Content="mm" />
+        <Label Grid.Column="2" Grid.Row="1" Content="" />
+        <Label Grid.Column="2" Grid.Row="2" Content="mm" />
+        <Label Grid.Column="2" Grid.Row="3" Content="cm" />
+        <Label Grid.Column="2" Grid.Row="4" Content="" />
+        <Label Grid.Column="2" Grid.Row="5" Content="cm" />
+        <Label Grid.Column="2" Grid.Row="5" Content="" />
+        <Label Grid.Column="2" Grid.Row="6" Content="cm" />
+        <Label Grid.Column="2" Grid.Row="7" Content="" />
+        <Label Grid.Column="2" Grid.Row="8" Content="cm" />
+    </Grid>
+</UserControl>

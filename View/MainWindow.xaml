@@ -1,0 +1,52 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:helpers="clr-namespace:KreslarzWPF.Helpers"
+        xmlns:vm="clr-namespace:KreslarzWPF.ViewModel" 
+        xmlns:tabData="clr-namespace:KreslarzWPF.View"
+        x:Class="KreslarzWPF.ViewModel.MainWindow" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="600" Width="440" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <vm:ViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            
+            <ComboBox Grid.Column="0" ItemsSource="{Binding Spans}" SelectedItem="{Binding SelectedSpan}" DisplayMemberPath="Id" />
+            <Button Grid.Column="1" Content="[+] Dodaj przęsło"  Command="{Binding AddSpanCommand}"/>
+            <Button Grid.Column="2" Content="[-] Usuń przęsło"  Command="{Binding DeleteSpanCommand}"/>
+        </Grid>
+
+        <TabControl Grid.Row="1" TabStripPlacement="Left">
+            <TabItem Header="Geometria Belki">
+                <tabData:Tab0Content />
+            </TabItem>
+            <TabItem Header="Geometria Przęsła">
+                <tabData:Tab1Content />
+            </TabItem>
+            <TabItem Header="Pręty dołem">
+                <tabData:Tab2Content />
+            </TabItem>
+            <TabItem Header="Pręty górą">
+                <tabData:Tab3Content />
+            </TabItem>
+            <TabItem Header="Strzemiona">
+                <tabData:Tab4Content />
+            </TabItem>
+        </TabControl>
+        <Button Grid.Row="2" Content="Rysuj belkę"  Command="{Binding DrawCommand}"/>
+    </Grid>
+</Window>

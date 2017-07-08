@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="KreslarzWPF.View.Tab0Content"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid DataContext="{Binding Beam}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="[1] Nazwa" />
+        <Label Grid.Column="0" Grid.Row="1" Content="[2] Wysokość" />
+        <Label Grid.Column="0" Grid.Row="2" Content="[3] Szerokość" />
+        <Label Grid.Column="0" Grid.Row="3" Content="[4] Otulina zbrojenia" />
+        <Label Grid.Column="0" Grid.Row="4" Content="[5] Rzędna spodu" />
+
+        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Name}" />
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Height}" />
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Width}" />
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Cover}" />
+
+        <Label Grid.Column="2" Grid.Row="0" Content=".dxf" />
+        <Label Grid.Column="2" Grid.Row="1" Content="cm" />
+        <Label Grid.Column="2" Grid.Row="2" Content="cm" />
+        <Label Grid.Column="2" Grid.Row="3" Content="cm" />
+        <Label Grid.Column="2" Grid.Row="4" Content="m" />
+    </Grid>
+</UserControl>
